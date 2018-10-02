@@ -1,8 +1,8 @@
 var mysql = require("mysql");
 var connection;
 console.log("jaws: ", process.env.JAWSDB_URL);
-if(process.env.JAWSDB_URL) {
-  connection = mysql.createConnection(process.env.JAWSDB_URL);
+if(process.env.JAWSDB_SILVER_URL) {
+  connection = mysql.createConnection(process.env.JAWSDB_SILVER_URL);
 }
 else {
   connection = mysql.createConnection({
