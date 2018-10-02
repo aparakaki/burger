@@ -3,7 +3,9 @@ var connection;
 // require('dotenv').config();
 
 // console.log(process.env)
-
+if(process.env.JAWSDB_URL) {
+  connection = mysql.createConnection(process.env.JAWSDB_URL);
+}
 // if (process.env.JAWSDB_URL) {
 //   connection = mysql.createConnection({
 //     host: process.env.JAWSDB_URL,
@@ -13,15 +15,13 @@ var connection;
 //     database: process.env.DATABASE
 //   });
 // }
-if(process.env.JAWSDB_URL) {
-  connection = mysql.createConnection(process.env.JAWSDB_URL);
-}
+
 else {
   connection = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "",
-    port: 3306,
+    //port: 3306,
     database: "burger_db"
   });
 }
